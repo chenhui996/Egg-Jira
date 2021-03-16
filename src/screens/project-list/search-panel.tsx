@@ -1,6 +1,27 @@
-import React from "react";
+import React, { FC } from "react";
 
-export const SearchPanel = ({ param, setParam, users }) => {
+export interface User {
+  id: string;
+  name: string;
+  email: string;
+  title: string;
+  organization: string;
+}
+
+interface SearchPanelProps {
+  param: {
+    name: string;
+    personId: string;
+  };
+  setParam: (param: SearchPanelProps["param"]) => void;
+  users: User[];
+}
+
+export const SearchPanel: FC<SearchPanelProps> = ({
+  param,
+  setParam,
+  users,
+}) => {
   return (
     <form>
       <div>
