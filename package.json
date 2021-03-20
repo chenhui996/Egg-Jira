@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@craco/craco": "^6.1.1",
+    "@emotion/react": "^11.1.5",
+    "@emotion/styled": "^11.1.5",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -10,6 +13,8 @@
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.0",
+    "antd": "^4.14.0",
+    "craco-less": "^1.17.1",
     "eslint-config-prettier": "^8.1.0",
     "jira-dev-tool": "^1.7.61",
     "qs": "^6.9.6",
@@ -20,7 +25,9 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
     "postinstall": "husky install"
   },
   "eslintConfig": {

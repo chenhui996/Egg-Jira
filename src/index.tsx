@@ -1,9 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { loadDevTools } from "jira-dev-tool";
+// 由于部分样式冲突，务必在 jira-dev-tool 后面引入 antd
+import "antd/dist/antd.less";
 import { AppProvider } from "./context/index";
 
 loadDevTools(() => {

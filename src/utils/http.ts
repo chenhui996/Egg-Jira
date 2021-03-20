@@ -24,7 +24,6 @@ export const http = async (
     },
     ...customConfig, // 若是 post请求，将会用 customConfig 覆盖 get 请求，故写在后面
   };
-
   if (config.method.toUpperCase() === "GET") {
     endpoint += `?${qs.stringify(data)}`;
   } else {

@@ -5,7 +5,6 @@ const localStorageKey = "__auto_provider_token__";
 const apiUrl = process.env.REACT_APP_API_URL;
 
 export const getToken = () => {
-  // console.log("1", window.localStorage.getItem(localStorageKey));
   return window.localStorage.getItem(localStorageKey);
 };
 
