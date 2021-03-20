@@ -1,12 +1,10 @@
 import React from "react";
 import { useAuth } from "../context/auth-context";
-import { Form, Input, Button } from "antd";
+import { Form, Input } from "antd";
 import { LongButton } from "./index";
 
-const apiUrl = process.env.REACT_APP_API_URL;
-
 export const LoginScreen = () => {
-  const { login, user } = useAuth();
+  const { login } = useAuth();
 
   const handleSubmit = (values: { username: string; password: string }) => {
     login(values);
@@ -17,13 +15,23 @@ export const LoginScreen = () => {
         name={"username"}
         rules={[{ required: true, message: "请输入用户名" }]}
       >
-        <Input placeholder={"用户名"} type="text" id={"username"} />
+        <Input
+          placeholder={"用户名"}
+          type="text"
+          id={"username"}
+          autoComplete={"true"}
+        />
       </Form.Item>
       <Form.Item
         name={"password"}
         rules={[{ required: true, message: "请输入密码" }]}
       >
-        <Input placeholder={"密码"} type="password" id={"password"} />
+        <Input
+          placeholder={"密码"}
+          type="password"
+          id={"password"}
+          autoComplete={"true"}
+        />
       </Form.Item>
       <Form.Item>
         <LongButton htmlType={"submit"} type={"primary"}>

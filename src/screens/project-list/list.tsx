@@ -22,6 +22,7 @@ export const List: FC<ListProps> = ({ list, users }) => {
     <Table
       pagination={false}
       dataSource={list}
+      rowKey={"id"}
       columns={[
         {
           title: "名称",
@@ -36,7 +37,7 @@ export const List: FC<ListProps> = ({ list, users }) => {
           title: "负责人",
           render(value, project) {
             return (
-              <span key={project.id}>
+              <span>
                 {users.find((user) => user.id === project.personId)?.name ||
                   "未知"}
               </span>
@@ -47,7 +48,7 @@ export const List: FC<ListProps> = ({ list, users }) => {
           title: "创建时间",
           render(value, project) {
             return (
-              <span key={project.id}>
+              <span>
                 {project.created
                   ? dayjs(project.created).format("YYYY-MM-DD")
                   : "无"}
