@@ -7,6 +7,7 @@ import logo from "assets/logo.svg";
 import left from "assets/left.svg";
 import right from "assets/right.svg";
 
+// 未登录状态
 export const UnauthenticateApp = () => {
   const [isRegister, setIsRegister] = useState(false);
   return (
