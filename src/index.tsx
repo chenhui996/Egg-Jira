@@ -5,15 +5,15 @@ import reportWebVitals from "./reportWebVitals";
 import { loadServer, DevTools } from "jira-dev-tool";
 // 由于部分样式冲突，务必在 jira-dev-tool 后面引入 antd
 import "antd/dist/antd.less";
-import { AppProvider } from "./context/index";
+import { AppProviders } from "./context/index";
 
 loadServer(() => {
   ReactDOM.render(
     <React.StrictMode>
-      <AppProvider>
+      <AppProviders>
         <DevTools />
         <App />
-      </AppProvider>
+      </AppProviders>
     </React.StrictMode>,
     document.getElementById("root")
   );

@@ -15,6 +15,13 @@ export const UnauthenticateApp = () => {
     <Container>
       <Header />
       <Background />
+      {/* <Button
+        onClick={() => {
+          throw new Error("点击抛出一个异常");
+        }}
+      >
+        抛出异常
+      </Button> */}
       <ShadowCard>
         <Title>{isRegister ? "请注册" : "请登陆"}</Title>
         {error ? (
@@ -64,7 +71,7 @@ const Header = styled.header`
 
 const ShadowCard = styled(Card)`
   width: 40rem;
-  min-height: 56rem;
+  /* min-height: 56rem; */
   padding: 3.2rem 4rem;
   border-radius: 0.3rem;
   box-sizing: border-box;
