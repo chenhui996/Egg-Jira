@@ -6,6 +6,7 @@ import styled from "@emotion/styled";
 import { Typography } from "antd";
 import { useProject } from "utils/project";
 import { useUsers } from "utils/user";
+import { useDocumentTitle } from "utils/index";
 
 export const ProjectListScreen = () => {
   const [param, setParam] = useState({
@@ -16,6 +17,8 @@ export const ProjectListScreen = () => {
 
   const { isLoading, error, data: list } = useProject(debouncedParam);
   const { data: users } = useUsers();
+
+  useDocumentTitle("产品列表", false);
 
   return (
     <Container>

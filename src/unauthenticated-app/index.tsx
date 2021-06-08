@@ -6,22 +6,19 @@ import styled from "@emotion/styled";
 import logo from "assets/logo.svg";
 import left from "assets/left.svg";
 import right from "assets/right.svg";
+import { useDocumentTitle } from "utils/index";
 
 // 未登录状态
 export const UnauthenticateApp = () => {
   const [isRegister, setIsRegister] = useState(false);
   const [error, setError] = useState<Error | null>(null);
+
+  useDocumentTitle("请登陆或注册以继续", false);
+
   return (
     <Container>
       <Header />
       <Background />
-      {/* <Button
-        onClick={() => {
-          throw new Error("点击抛出一个异常");
-        }}
-      >
-        抛出异常
-      </Button> */}
       <ShadowCard>
         <Title>{isRegister ? "请注册" : "请登陆"}</Title>
         {error ? (
